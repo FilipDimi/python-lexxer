@@ -1,6 +1,8 @@
 token_specs = [
     ('COMMENT',     r'//.*?$')
     # TODO (Finish tokens)
+    # TODO (Finish tokens)
+    # TODO (Finish tokens)
 ]
 
 
