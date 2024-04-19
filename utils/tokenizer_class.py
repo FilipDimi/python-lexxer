@@ -1,3 +1,9 @@
+token_specs = [
+    ('COMMENT',     r'//.*?$')
+    # TODO (Finish tokens)
+]
+
+
 class Tokenizer:
     """Lexical Analyzer Class"""
     def __init__(self, c_code):
@@ -10,6 +16,4 @@ class Tokenizer:
 
     
     # TODO (Planning and Implementing Methods)
-    # .
-    # .
-    # .
+    
