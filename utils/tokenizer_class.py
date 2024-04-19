@@ -4,19 +4,20 @@ import re
 # Tuple: (Token, regex) -> follow this grammar for the token_specs list
 token_specs = [
     ('Inline-comment-',      r'(?s)//.*?$|/\*.*?\*/'),
+    ('Open-multiline-comment',  r'/\*'),
+    ('Close-multiline-comment',  r'\*/'),
     ('Keyword-',             r'\bint|float|double|boolean|String|char|if|while|for|do\b'),
-    ('Identifer-',           r'\b[a-zA-z]\b'),
+    ('Integer-',             r'[1-9]+'),
     ('Open-paren',           r'\('),
     ('Close-paren',          r'\)'),
     ('Open-bracket',         r'{'),
     ('Close-bracket',        r'}'),
-    ('Assignment',           r'='),
     ('Semi-Colon',           r';'),
+    ('Assignment',           r'='),
     ('Comparison',           r'==|!=|>=|=<|<|>'),
-    ('Operator',             r'+|-|\/|*'),
-    
-    
-    
+    ('Operator-',             r'\+|-|/|\b\*\b'),
+    ('Identifer-',           r'\b[a-zA-z]+\b'),
+    (' ',                      r'')    
     # TODO (Finish tokens) Fill out all of the missing tokens
     # TODO (Appropriate token names) make sure the token names match with the hw instruction
     # ! NOONE TOUCH THE COMMENT REGEX

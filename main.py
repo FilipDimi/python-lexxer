@@ -1,9 +1,9 @@
 from utils.tokenizer_class import Tokenizer
-from utils.sample_c_codes import sample_2
+from utils.sample_c_codes import sample_1
 
 
 def main():
-    c_lite_code = sample_2
+    c_lite_code = sample_1
 
     tok = Tokenizer(c_lite_code)
     tok.parser()

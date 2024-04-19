@@ -18,13 +18,3 @@ int main()
 }
 /******* COMMENT4 ********/
 """
-sample_2="""// content for input.c
-int main() {
-	int x = 0;
-  float ab = 0; 
-  boolean a = true;
-	if (x == 0) {
-		x = x + 1;
-	}
-}
-"""
