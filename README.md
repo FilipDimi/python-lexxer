@@ -10,7 +10,7 @@ Utils folder contains all of the helpers to create the Lexer.
 Has minimal code. It is used to run the program, call the necessary toolkits to tokenize the input
 
 ## How to use it
-This program has to be run from the console.
+This program has to be run from the console and make sure Python3 is installed on your machine.
 
 ### There are 2 ways of using it:
 * You can always run the following command `python3 main.py --help` for MacOS/Linux or `python main.py --help` for Windows to see a guide of how to use it.
