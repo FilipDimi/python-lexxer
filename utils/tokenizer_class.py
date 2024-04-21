@@ -1,5 +1,6 @@
 import re
 
+
 # List of tuple that containt the tokens with their regex
 # Tuple: (Token, regex) -> follow this grammar for the token_specs list
 token_specs = [
@@ -38,11 +39,11 @@ class Tokenizer:
         """Doc String to list converter"""
         return temp.splitlines()
 
-    def parser(self):
+    def parser(self, file_name='cli_input'):
+        token_lines = []
         """Parse that convers the c lite code to tokens"""
         # ! HIGHLY EXPERIMENTAL Method. For now it's working good, but we have to test it better
         c_code = self.convert_doc_to_list(self.c_code)
-        print("Output:")
         for line in c_code:
             for token in token_specs:
                 #Assigning match to if a regular expression is found
@@ -51,5 +52,6 @@ class Tokenizer:
                     # so far the program behaves the way it should
                 #checking if there is a match printing out the token name and the found object
                 if match:
-                    print(f"{token[0]} {match.group()}")
-                  
+                    token_lines.append(f"{token[0]} {match.group()}")
+        
+        print(token_lines)
