@@ -1,13 +1,27 @@
+import sys
+from utils.helpers import arg_manager, handle_cli_input, handle_file_input, generate_random_name
 from utils.tokenizer_class import Tokenizer
-from utils.sample_c_codes import sample_1
-
 
 def main():
-    c_lite_code = sample_1
+    manager = arg_manager()
+    args = manager.parse_args()
 
-    tok = Tokenizer(c_lite_code)
-    tok.parser()
+    if len(sys.argv) == 1:
+        manager.print_help(sys.stderr)
+        sys.exit(1)
 
+    if args.cli:
+        print("CLI mode activated. Please enter your input. 💻")
+        user_input = handle_cli_input()
+    elif args.file:
+        print(f"Reading from file: {args.file} 📂")
+        generate_random_name(args.file)
+        user_input = handle_file_input(args.file)
+    else:
+        manager.print_help()
+
+    tok = Tokenizer(user_input)
+    tok.parser(args.file)
 
 if __name__ == '__main__':
     main()
