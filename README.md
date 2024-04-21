@@ -20,7 +20,7 @@ This program has to be run from the console and make sure Python3 is installed o
     3. When you are in the correct directory run the following command `python main.py --cli` or `python3 main.py --cli` on MacOS/Linux
     4. Enter the input line by line and make sure there is only one empty line on the end; nowhere else
     5. The output will be stored in the outputs folder
-* Read a file from the folder inputs
+* Read input from file
     1. Open CMD for Windows or Terminal for MacOS/Linux
     2. Navigate to the correct directory with the use of the command `cd [directory]`
     3. Make sure that the file you want to tokenize is in the inputs folder. _there is already a test.c file to test it_
