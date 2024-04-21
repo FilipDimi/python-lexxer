@@ -1,5 +1,5 @@
 import re
-
+from .helpers import write_list_to_file
 
 # List of tuple that containt the tokens with their regex
 # Tuple: (Token, regex) -> follow this grammar for the token_specs list
@@ -40,8 +40,8 @@ class Tokenizer:
         return temp.splitlines()
 
     def parser(self, file_name='cli_input'):
-        token_lines = []
         """Parse that convers the c lite code to tokens"""
+        token_lines = []
         # ! HIGHLY EXPERIMENTAL Method. For now it's working good, but we have to test it better
         c_code = self.convert_doc_to_list(self.c_code)
         for line in c_code:
@@ -54,4 +54,5 @@ class Tokenizer:
                 if match:
                     token_lines.append(f"{token[0]} {match.group()}")
         
-        print(token_lines)
+
+        write_list_to_file(token_lines, file_name)
