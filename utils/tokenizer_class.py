@@ -18,7 +18,6 @@ token_specs = [
     ('Comparison',           r'==|!=|>=|=<|<|>'),
     ('Operator-',             r'-|\+|\*|/'),
     ('Identifer-',           r'\b[a-zA-z0-9]+\b')
-      
     # TODO (Finish tokens) Fill out all of the missing tokens
     # TODO (Appropriate token names) make sure the token names match with the hw instruction
     # ! NOONE TOUCH THE COMMENT REGEX
