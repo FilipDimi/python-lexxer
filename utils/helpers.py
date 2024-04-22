@@ -52,8 +52,8 @@ def write_list_to_file(list_of_tokens, file_name):
     """Writes Python list into a text file"""
     new_file_name = generate_random_name(file_name)
 
-    with open(f"outputs/{new_file_name}.txt", 'w') as file:
+    with open(f"output/{new_file_name}.txt", 'w') as file:
         for line in list_of_tokens:
             file.write(f"{line}\n")
 
-    print(f"Output stored in outputs/{new_file_name}.txt")
+    print(f"Output stored in output/{new_file_name}.txt")
