@@ -4,8 +4,8 @@ from .helpers import write_list_to_file
 # List of tuple that containt the tokens with their regex
 # Tuple: (Token, regex) -> follow this grammar for the token_specs list
 token_specs = [
-    ('Inline-comment-',      r'(?s)//.*?$|/\*.*?\*/'),
-    ('Open-multiline-comment',  r'/\*'),
+    ('Inline-comment-',      r'(?s)//.*$'),
+    ('Open-multiline-comment',  r'/\*.*$'),
     ('Close-multiline-comment',  r'\*/'),
     ('Keyword-',             r'\bint|float|double|boolean|String|char|if|while|for|do\b'),
     ('Integer-',             r'[1-9]+'),
@@ -17,7 +17,7 @@ token_specs = [
     ('Assignment',           r'='),
     ('Comparison',           r'==|!=|>=|=<|<|>'),
     ('Operator-',             r'\+|-|/|\b\*\b'),
-    ('Identifer-',           r'\b[a-zA-z]+\b'),
+    ('Identifer-',           r'\b[a-zA-z0-9]+\b'),
     (' ',                      r'')    
     # TODO (Finish tokens) Fill out all of the missing tokens
     # TODO (Appropriate token names) make sure the token names match with the hw instruction
