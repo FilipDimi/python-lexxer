@@ -5,7 +5,7 @@ from .helpers import write_list_to_file
 # Tuple: (Token, regex) -> follow this grammar for the token_specs list
 token_specs = [
     ('Inline-comment-',      r'(?s)//.*$'),
-    ('Open-multiline-comment',  r'/\*.*$'),
+    ('Open-multiline-comment',  r'/\*'),
     ('Close-multiline-comment',  r'\*/'),
     ('Keyword-',             r'\bint|float|double|boolean|String|char|if|while|for|do\b'),
     ('Integer-',             r'[1-9]+'),
@@ -16,9 +16,9 @@ token_specs = [
     ('Semi-Colon',           r';'),
     ('Assignment',           r'='),
     ('Comparison',           r'==|!=|>=|=<|<|>'),
-    ('Operator-',             r'\+|-|/|\b\*\b'),
-    ('Identifer-',           r'\b[a-zA-z0-9]+\b'),
-    (' ',                      r'')    
+    ('Operator-',             r'-|\+|\*|/'),
+    ('Identifer-',           r'\b[a-zA-z0-9]+\b')
+      
     # TODO (Finish tokens) Fill out all of the missing tokens
     # TODO (Appropriate token names) make sure the token names match with the hw instruction
     # ! NOONE TOUCH THE COMMENT REGEX
