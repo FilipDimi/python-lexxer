@@ -8,16 +8,18 @@ token_specs = [
     ('Open-multiline-comment',  r'/\*'),
     ('Close-multiline-comment',  r'\*/'),
     ('Keyword-',             r'\bint|float|double|boolean|String|char|if|while|for|do\b'),
-    ('Integer-',             r'[1-9]+'),
+    ('Integer-',             r'\b\d{2}\b|\b\d{1}\b'),
+    ('Float- ',              r'\d+\.\d+'),
+    ('Boolean- ',            r'true|false'),
     ('Open-paren',           r'\('),
     ('Close-paren',          r'\)'),
     ('Open-bracket',         r'{'),
     ('Close-bracket',        r'}'),
     ('Semi-Colon',           r';'),
+    ('Comparison',           r'==|!=|>=|<=|<|>'),
     ('Assignment',           r'='),
-    ('Comparison',           r'==|!=|>=|=<|<|>'),
-    ('Operator-',             r'-|\+|\*|/'),
-    ('Identifer-',           r'\b[a-zA-z0-9]+\b')
+    ('Operator-',             r'[+/*-]'),
+    ('Identifer-',           r'\b(?!int|float|double|boolean|String|char|if|while|for|do)\b\b[a-zA-Z0-9]*\b')
     # TODO (Finish tokens) Fill out all of the missing tokens
     # TODO (Appropriate token names) make sure the token names match with the hw instruction
     # ! NOONE TOUCH THE COMMENT REGEX
