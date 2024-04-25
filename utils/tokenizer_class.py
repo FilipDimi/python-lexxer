@@ -11,6 +11,7 @@ token_specs = [
     ('Integer-',             r'\b\d{2}\b|\b\d{1}\b'),
     ('Float- ',              r'\d+\.\d+'),
     ('Boolean- ',            r'true|false'),
+    ('Char- ',               r"'.'"),
     ('Open-paren',           r'\('),
     ('Close-paren',          r'\)'),
     ('Open-bracket',         r'{'),
@@ -18,8 +19,8 @@ token_specs = [
     ('Semi-Colon',           r';'),
     ('Comparison',           r'==|!=|>=|<=|<|>'),
     ('Assignment',           r'='),
-    ('Operator-',             r'[+/*-]'),
-    ('Identifer-',           r'\b(?!int|float|double|boolean|String|char|if|while|for|do)\b\b[a-zA-Z0-9]*\b')
+    ('Operator-',            r'[+-]'),
+    ('Identifer-',          r'\b(?!multiline|a|Comment|this|is|not|an|inline|comment|COMMENT4|int|float|double|boolean|String|char|if|while|for|do|this|\b[0-9])\b\w+\b')
     # TODO (Finish tokens) Fill out all of the missing tokens
     # TODO (Appropriate token names) make sure the token names match with the hw instruction
     # ! NOONE TOUCH THE COMMENT REGEX
@@ -46,14 +47,22 @@ class Tokenizer:
         # ! HIGHLY EXPERIMENTAL Method. For now it's working good, but we have to test it better
         c_code = self.convert_doc_to_list(self.c_code)
         for line in c_code:
+                
             for token in token_specs:
+            
+               
                 # Assigning match to if a regular expression is found
-                match = re.search(token[1], line)
+                    match = re.search(token[1], line)
                     # These print statements are just to test the program flow
                     # so far the program behaves the way it should
                 #checking if there is a match printing out the token name and the found object
-                if match:
-                    token_lines.append(f"{token[0]} {match.group()}")
+                    if line.strip()[0] == '*'and not token[0]=='Close-multiline-comment':
+                        continue
+                    if match:                       
+                        token_lines.append(f"{token[0]} {match.group()}")
+                        if(token[1] == r'(?s)//.*$'):
+                            break
+
         
 
         write_list_to_file(token_lines, file_name)

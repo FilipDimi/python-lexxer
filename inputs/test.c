@@ -1,3 +1,4 @@
+// /* not a multiline comment */
 /*
  * Comment // not an inline comment
  * 1
