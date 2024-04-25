@@ -1,3 +1,11 @@
+# #############################################
+# AUTHORS:
+# Austin Kite
+# Filip Dimitrievski
+# CPS450 Homework
+# https://github.com/FilipDimi/python-lexxer
+# #############################################
+
 import sys
 from utils.helpers import arg_manager, handle_cli_input, handle_file_input, generate_random_name
 from utils.tokenizer_class import Tokenizer

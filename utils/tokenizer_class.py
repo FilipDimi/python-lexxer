@@ -47,7 +47,7 @@ class Tokenizer:
         c_code = self.convert_doc_to_list(self.c_code)
         for line in c_code:
             for token in token_specs:
-                #Assigning match to if a regular expression is found
+                # Assigning match to if a regular expression is found
                 match = re.search(token[1], line)
                     # These print statements are just to test the program flow
                     # so far the program behaves the way it should
