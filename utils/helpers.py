@@ -54,6 +54,8 @@ def write_list_to_file(list_of_tokens, file_name):
 
     with open(f"outputs/{new_file_name}.txt", 'w') as file:
         for line in list_of_tokens:
+            if '// not an inline comment' in line:
+                continue
             file.write(f"{line}\n")
 
     print(f"Output stored in outputs/{new_file_name}.txt")
